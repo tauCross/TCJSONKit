@@ -8,20 +8,29 @@
 
 #import "ViewController.h"
 
+#import "TCJSONKit.h"
+
+
+
 @interface ViewController ()
 
 @end
 
+
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    NSString *string = @"{\"number\":0}";
+    NSLog(@"%@", [string JSONObject]);
+    
+    NSDictionary *dict = @{@"number" : @0};
+    NSLog(@"%@", [dict JSONString]);
+    
+    id array = @[@0];
+    NSLog(@"%@", [array JSONString]);
 }
 
 @end
