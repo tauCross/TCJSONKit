@@ -4,7 +4,7 @@
 
 ```ruby
 platform :ios, '7.0'
-pod "TCRefresh"
+pod "TCJSONKit"
 ```
 
 #### Usage
