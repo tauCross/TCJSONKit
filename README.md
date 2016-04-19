@@ -9,7 +9,7 @@ pod "TCJSONKit"
 
 #### Usage
 ```Objective-C
-#import <TCJSONKit>
+#import <TCJSONKit.h>
 
 ...
 ...
