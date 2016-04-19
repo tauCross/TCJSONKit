@@ -15,13 +15,13 @@ pod "TCJSONKit"
 ...
 ...
 
-	NSString *string = @"{\"number\":0}";
-    NSLog(@"%@", [string JSONObject]);
+NSString *string = @"{\"number\":0}";
+NSLog(@"%@", [string JSONObject]);
     
-    NSDictionary *dict = @{@"number" : @0};
-    NSLog(@"%@", [dict JSONString]);
+NSDictionary *dict = @{@"number" : @0};
+NSLog(@"%@", [dict JSONString]);
     
-    id array = @[@0];
-    NSLog(@"%@", [array JSONString]);
+id array = @[@0];
+NSLog(@"%@", [array JSONString]);
 
 ```
