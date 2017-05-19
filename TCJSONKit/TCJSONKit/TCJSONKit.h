@@ -12,9 +12,9 @@
 
 @interface TCJSONKit : NSObject
 
-+ (NSString *)stringWithArray:(NSArray *)array;
-+ (NSString *)stringWithDictionary:(NSDictionary *)dictionary;
-+ (id)objectWithString:(NSString *)string;
++ (NSString *)tc_stringWithArray:(NSArray *)array;
++ (NSString *)tc_stringWithDictionary:(NSDictionary *)dictionary;
++ (id)tc_objectWithString:(NSString *)string;
 
 @end
 
@@ -22,7 +22,7 @@
 
 @interface NSObject (TCJSONKit)
 
-- (NSString *)JSONString;
+- (NSString *)tc_JSONString;
 
 @end
 
@@ -30,7 +30,7 @@
 
 @interface NSArray (TCJSONKit)
 
-- (NSString *)JSONString;
+- (NSString *)tc_JSONString;
 
 @end
 
@@ -38,7 +38,7 @@
 
 @interface NSDictionary (TCJSONKit)
 
-- (NSString *)JSONString;
+- (NSString *)tc_JSONString;
 
 @end
 
@@ -46,6 +46,6 @@
 
 @interface NSString (TCJSONKit)
 
-- (id)JSONObject;
+- (id)tc_JSONObject;
 
 @end

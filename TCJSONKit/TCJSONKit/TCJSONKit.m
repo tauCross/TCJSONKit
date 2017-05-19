@@ -12,7 +12,7 @@
 
 @implementation TCJSONKit
 
-+ (NSString *)stringWithArray:(NSArray *)array
++ (NSString *)tc_stringWithArray:(NSArray *)array
 {
     if([NSJSONSerialization isValidJSONObject:array])
     {
@@ -26,7 +26,7 @@
     return nil;
 }
 
-+ (NSString *)stringWithDictionary:(NSDictionary *)dictionary
++ (NSString *)tc_stringWithDictionary:(NSDictionary *)dictionary
 {
     if([NSJSONSerialization isValidJSONObject:dictionary])
     {
@@ -40,7 +40,7 @@
     return nil;
 }
 
-+ (id)objectWithString:(NSString *)string
++ (id)tc_objectWithString:(NSString *)string
 {
     NSError *error = nil;
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
@@ -58,9 +58,9 @@
 
 @implementation NSDictionary (TCJSONKit)
 
-- (NSString *)JSONString
+- (NSString *)tc_JSONString
 {
-    return [TCJSONKit stringWithDictionary:self];
+    return [TCJSONKit tc_stringWithDictionary:self];
 }
 
 @end
@@ -69,15 +69,15 @@
 
 @implementation NSObject (TCJSONKit)
 
-- (NSString *)JSONString
+- (NSString *)tc_JSONString
 {
     if([self isKindOfClass:[NSArray class]])
     {
-        return [TCJSONKit stringWithArray:(NSArray *)self];
+        return [TCJSONKit tc_stringWithArray:(NSArray *)self];
     }
     else if([self isKindOfClass:[NSDictionary class]])
     {
-        return [TCJSONKit stringWithDictionary:(NSDictionary *)self];
+        return [TCJSONKit tc_stringWithDictionary:(NSDictionary *)self];
     }
     else if([self isKindOfClass:[NSString class]])
     {
@@ -95,9 +95,9 @@
 
 @implementation NSArray (TCJSONKit)
 
-- (NSString *)JSONString
+- (NSString *)tc_JSONString
 {
-    return [TCJSONKit stringWithArray:self];
+    return [TCJSONKit tc_stringWithArray:self];
 }
 
 @end
@@ -106,9 +106,9 @@
 
 @implementation NSString (TCJSONKit)
 
-- (id)JSONObject
+- (id)tc_JSONObject
 {
-    return [TCJSONKit objectWithString:self];
+    return [TCJSONKit tc_objectWithString:self];
 }
 
 @end

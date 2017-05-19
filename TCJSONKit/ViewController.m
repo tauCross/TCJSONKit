@@ -24,13 +24,13 @@
     [super viewDidLoad];
     
     NSString *string = @"{\"number\":0}";
-    NSLog(@"%@", [string JSONObject]);
+    NSLog(@"%@", [string tc_JSONObject]);
     
     NSDictionary *dict = @{@"number" : @0};
-    NSLog(@"%@", [dict JSONString]);
+    NSLog(@"%@", [dict tc_JSONString]);
     
     id array = @[@0];
-    NSLog(@"%@", [array JSONString]);
+    NSLog(@"%@", [array tc_JSONString]);
 }
 
 @end
